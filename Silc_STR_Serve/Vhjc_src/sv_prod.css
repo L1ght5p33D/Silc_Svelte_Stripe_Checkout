@@ -1,0 +1,9 @@
+
+
+
+.prod_wrap{
+    background-color: darkslategray;
+    color: white;
+    display: flex;
+    justify-content: center;
+}

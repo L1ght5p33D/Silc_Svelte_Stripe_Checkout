@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	 <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="/jt1/"></script>
+
+    <title>SilClouds Login</title>
+  </head>
+  <body>
+    <div>SilClouds Login</div>
+    <br><div>
+      Username
+      <input type="text" id="username_input">
+    </div>
+    <div>
+      Password <input type="text" id="password_input">
+    </div>
+    <button id="login_sub_btn" onclick="login_post()">Login</button>
+    <br>
+
+<a href="/create_account/"> Create Account </a>
+  </body>
+
+  <script type="text/javascript">
+      
+
+              async function login_post(){
+                var login_un = document.getElementById("username_input").value
+                var login_pwd = document.getElementById("password_input").value
+          var login_sub_data = {"username_sub": login_un,
+                                "password_sub": login_pwd }
+        
+        const location = window.location.hostname;
+                
+    const purl = `http://${location}:1110/dash_auth/`
+
+              console.log(" init login call ")
+                  const settings = {
+                      method: 'POST',
+                      mode: 'no-cors',
+                      cache: 'no-cache',
+                      body: JSON.stringify( login_sub_data ),
+                      headers: {
+                          Accept: 'application/json',
+                          'Content-Type': 'application/json',
+                      }
+                  };
+                  try {
+                      const fetchResponse = await fetch( purl , settings);
+                      const data = await fetchResponse.json();
+                     
+                      console.log( "login post fetch data ~ " , data )
+                      return data;
+                  } catch (e) {
+                      return e;
+                  }    
+              }
+
+      function login_submit(){
+
+          var ldata = login_post();
+            console.log("login data from async post ~ ", ldata)
+
+var response_txt_dec = ldata;
+            
+          if (response_txt_dec["login_stat"] == "UserFound" ){
+            console.log("login resp success,,, redirect to home ")
+          }
+          else if (response_txt_dec["login_stat"] == "UserNotFound" ){
+            console.log("login error User Not Found ... show error ui ")
+          }
+      }
+
+    
+      
+
+  </script>
+</html>

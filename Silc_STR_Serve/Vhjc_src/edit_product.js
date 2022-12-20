@@ -1,0 +1,1 @@
+console.log("init edit_product.js" )

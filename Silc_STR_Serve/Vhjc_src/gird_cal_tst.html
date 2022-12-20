@@ -1,0 +1,675 @@
+<html>
+<head>
+    <title>SilCloud Cal</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="stylesheet" type="text/css" href="/static/sc_cal_ag_523_style.css">
+<link rel="stylesheet" type="text/css" href="/static/sc_cal_ag_527_itserv_style.css">
+<link rel="stylesheet" type="text/css" href="/static/sc_amg_profile_61.css">
+<link rel="stylesheet" type="text/css" href="/static/sc_amg_activity_61.css">
+<link rel="stylesheet" type="text/css" href="/static/sc_amg_prod_615.css">
+
+<script src="/static/sc_cal_ag_527_itserv.js"></script>
+<script src="/static/sc_stat_glob.js"></script>
+<script src="/static/sc_cal_ag_523.js">
+</script><script src="/static/sc_amg_profile_61.js"></script>
+<script src="/static/sc_amg_aux_66.js"></script>
+
+</head>
+
+<!--<link rel="stylesheet" href= -->
+<!--        /static/cal_css-->
+
+<!--crossorigin="anonymous"-->
+<!--&gt;-->
+
+<!--<link rel="stylesheet" href= "/cal_css" >-->
+
+
+
+<body>
+
+
+<div id="sc_cal_root_wrap">
+
+<div id="user_show_div" style="display: none;"></div>
+
+
+
+
+
+<!--    silcclouds app main grid-->
+ <!-- display set to none in set_day_dial_rxns() to enter day edit screen in cdeg_page_cont -->
+    <div id="sc_amg" class="sc_amg">
+
+
+
+        <div class="sc_amg_nav">
+            <div id="sc_amg_nav_item_1" class="sc_amg_nav_item" onclick="amg_nav_select('sc_amg_activity_page_content')">
+               Activity (public/client visible)</div>
+            <div id="sc_amg_nav_item_2" class="sc_amg_nav_item" onclick="amg_nav_select('sc_amg_itemserv_page_content')"> Items and Services </div>
+
+                 <div id="sc_amg_nav_item_7" class="sc_amg_nav_item" onclick="amg_nav_select('sc_amg_prod_page_content')"> Prod </div>
+
+            <div id="sc_amg_nav_item_3" class="sc_amg_nav_item" onclick="amg_nav_select('profile_page_content')">  Profile (bankinfo)</div>
+            <div id="sc_amg_nav_item_4" class="sc_amg_nav_item"> Reporting (reciepts/client actions(block)) </div>
+            <div id="sc_amg_nav_item_5" class="sc_amg_nav_item" onclick="amg_nav_select('sc_amg_schedule_page_content')">Driver Schedule Test Screen </div>
+
+        </div>
+
+            <!-- To test layout_cal( val )
+            <button id="layout_cal_but" onclick="layout_cal('Day')">layout calendar</button>-->
+
+
+            <div id="sc_amg_page_content_wrap">
+
+              <!-- silclouds calendar day edit grid -->
+              <div id="sc_cdeg" class="sc_amg_page_content" style="display: none;">
+                <div id="cdeg_back_button_wrap">
+                <div id="cdeg_back_button" onclick="cdeg_back_press()">Back</div>
+              </div>
+                <div id="cdeg_page_cont">
+                  <div>
+                     <div class="cal_day_dial_body">
+                      <div id="inj_add_event_button">
+                        <!-- <div class='cd_opt' onclick='inj_cal_dial_add_event(${cal_idx})'>Add Event</div> -->
+                      </div>
+                      <div class="cd_opt_wrap">
+                        <div id="cd_opt_1" class="cd_opt">Add Transaction (Schedule / Now)</div>
+                      </div>
+                    <div class="cdeg_activity_feed">
+                        <div class="activity_test_conten ">transaction 1  </div>
+                        <div class="activity_test_content">transaction 2 ... </div>
+
+                    </div>
+                     </div>
+                     </div>
+                </div>
+              </div>
+
+              <!-- [page content] schedule test page -->
+
+              <div id="cal_grid_month_wrap">
+                  <div id="sc_cal_cont_week_1" class="cal_grid_item_week" >
+                      <div id ="cal_day_0" class="cal_grid_item_day" >
+                        <div class="gri_day_title"></div>
+                         <div class="gri_day_body"></div>
+                      </div>
+                      <div id='cal_day_1' class="cal_grid_item_day" >
+                        <div class="gri_day_title"></div>
+                         <div class="gri_day_body"></div>
+                      </div>
+
+                      <div id='cal_day_2' class="cal_grid_item_day" >
+                        <div class="gri_day_title"></div>
+                         <div class="gri_day_body"></div>
+                       </div>
+                      <div  id='cal_day_3' class="cal_grid_item_day">
+                        <div class="gri_day_title"></div>
+                         <div class="gri_day_body"></div>
+                      </div>
+                      <div id='cal_day_4' class="cal_grid_item_day"></div>
+                      <div  id='cal_day_5' class="cal_grid_item_day"></div>
+                      <div  id='cal_day_6' class="cal_grid_item_day"></div>
+                  </div>
+
+                  <div id="sc_cal_cont_week_2" class="cal_grid_item_week">
+                      <div id ="cal_day_7" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_8" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_9" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_10" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_11"  class="cal_grid_item_day"></div>
+                      <div id ="cal_day_12" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_13" class="cal_grid_item_day"></div>
+                  </div>
+
+                  <div id="sc_cal_cont_week_3" class="cal_grid_item_week">
+                      <div id ="cal_day_14" class="cal_grid_item_day " ></div>
+                      <div id ="cal_day_15" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_16" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_17" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_18" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_19" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_20" class="cal_grid_item_day"></div>
+                  </div>
+
+                  <div id="sc_cal_cont_week_4" class="cal_grid_item_week">
+                      <div id ="cal_day_21" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_22" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_23" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_24" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_25" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_26" class="cal_grid_item_day"></div>
+                      <div id ="cal_day_27" class="cal_grid_item_day"></div>
+                  </div>
+              </div>
+
+              <div id="sc_amg_schedule_page_content" class="sc_amg_page_content" >
+
+
+    <div id="dwm_option_menu" class="sc_cal_label_row">
+
+<!--                                        <div class="sc_cal_label_space"></div>-->
+<!--                        <select name="mob_cal_view" id="timeview_opt"-->
+<!--                                onchange="mob_cal_opt_select()"-->
+<!--                        >-->
+<!--                            <option value="Day">Day</option>-->
+<!--                            <option value="Week">Week</option>-->
+<!--                            <option value="Month">Month</option>-->
+<!--                        </select>-->
+
+
+                    </div>
+
+
+                <div id="cal_grid_month_wrap">
+
+                  <div id="mo_page_ctl_wrap">
+                      <div id="mo_page_left" class="mo_page_ctl">
+                          <button class="mo_page_arrow_icon" onclick="inj_mo_chunk(-1)">‹</button>
+                      </div>
+                      <!-- <div id="mo_page_ctl_center_date"></div> -->
+                      <div id="mo_page_right" class="mo_page_ctl" onclick="inj_mo_chunk(1)">
+                          <button class="mo_page_arrow_icon">›</button>
+                      </div>
+                  </div>
+
+                    <div id="sc_cal_cont_week_1" class="cal_grid_item_week">
+                        <div id="cal_day_0" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jun 20</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_0" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_0', 0 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_0" class="driver_ht_grid">
+              <div id="driver_ht_grid_0" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_0" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_0', 0 )">
+<div id="driver_day_edit_button_0"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_1" class="cal_grid_item_day cal_day_blue_shadow"><div class="gri_day_title"><div><div class="day_inj_cont">5 21</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_1" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_1', 1 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_1" class="driver_ht_grid">
+              <div id="driver_ht_grid_1" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_1" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_1', 1 )">
+<div id="driver_day_edit_button_1"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_2" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jun 22</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_2" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_2', 2 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_2" class="driver_ht_grid">
+              <div id="driver_ht_grid_2" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_2" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_2', 2 )">
+<div id="driver_day_edit_button_2"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_3" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jun 23</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_3" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_3', 3 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_3" class="driver_ht_grid">
+              <div id="driver_ht_grid_3" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_3" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_3', 3 )">
+<div id="driver_day_edit_button_3"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_4" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jun 24</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_4" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_4', 4 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_4" class="driver_ht_grid">
+              <div id="driver_ht_grid_4" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_4" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_4', 4 )">
+<div id="driver_day_edit_button_4"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_5" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jun 25</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_5" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_5', 5 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_5" class="driver_ht_grid">
+              <div id="driver_ht_grid_5" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_5" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_5', 5 )">
+<div id="driver_day_edit_button_5"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_6" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jun 26</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_6" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_6', 6 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_6" class="driver_ht_grid">
+              <div id="driver_ht_grid_6" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_6" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_6', 6 )">
+<div id="driver_day_edit_button_6"> + </div></div>
+        </div></div></div>
+                    </div>
+
+                    <div id="sc_cal_cont_week_2" class="cal_grid_item_week">
+                        <div id="cal_day_7" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jun 27</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_7" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_7', 7 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_7" class="driver_ht_grid">
+              <div id="driver_ht_grid_7" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_7" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_7', 7 )">
+<div id="driver_day_edit_button_7"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_8" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jun 28</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_8" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_8', 8 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_8" class="driver_ht_grid">
+              <div id="driver_ht_grid_8" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_8" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_8', 8 )">
+<div id="driver_day_edit_button_8"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_9" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jun 29</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_9" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_9', 9 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_9" class="driver_ht_grid">
+              <div id="driver_ht_grid_9" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_9" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_9', 9 )">
+<div id="driver_day_edit_button_9"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_10" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jun 30</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_10" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_10', 10 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_10" class="driver_ht_grid">
+              <div id="driver_ht_grid_10" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_10" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_10', 10 )">
+<div id="driver_day_edit_button_10"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_11" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 1</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_11" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_11', 11 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_11" class="driver_ht_grid">
+              <div id="driver_ht_grid_11" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_11" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_11', 11 )">
+<div id="driver_day_edit_button_11"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_12" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 2</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_12" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_12', 12 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_12" class="driver_ht_grid">
+              <div id="driver_ht_grid_12" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_12" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_12', 12 )">
+<div id="driver_day_edit_button_12"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_13" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 3</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_13" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_13', 13 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_13" class="driver_ht_grid">
+              <div id="driver_ht_grid_13" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_13" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_13', 13 )">
+<div id="driver_day_edit_button_13"> + </div></div>
+        </div></div></div>
+                    </div>
+
+                    <div id="sc_cal_cont_week_3" class="cal_grid_item_week">
+                        <div id="cal_day_14" class="cal_grid_item_day "><div class="gri_day_title"><div><div class="day_inj_cont">Jul 4</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_14" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_14', 14 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_14" class="driver_ht_grid">
+              <div id="driver_ht_grid_14" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_14" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_14', 14 )">
+<div id="driver_day_edit_button_14"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_15" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 5</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_15" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_15', 15 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_15" class="driver_ht_grid">
+              <div id="driver_ht_grid_15" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_15" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_15', 15 )">
+<div id="driver_day_edit_button_15"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_16" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 6</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_16" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_16', 16 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_16" class="driver_ht_grid">
+              <div id="driver_ht_grid_16" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_16" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_16', 16 )">
+<div id="driver_day_edit_button_16"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_17" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 7</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_17" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_17', 17 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_17" class="driver_ht_grid">
+              <div id="driver_ht_grid_17" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_17" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_17', 17 )">
+<div id="driver_day_edit_button_17"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_18" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 8</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_18" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_18', 18 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_18" class="driver_ht_grid">
+              <div id="driver_ht_grid_18" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_18" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_18', 18 )">
+<div id="driver_day_edit_button_18"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_19" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 9</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_19" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_19', 19 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_19" class="driver_ht_grid">
+              <div id="driver_ht_grid_19" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_19" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_19', 19 )">
+<div id="driver_day_edit_button_19"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_20" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 10</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_20" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_20', 20 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_20" class="driver_ht_grid">
+              <div id="driver_ht_grid_20" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_20" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_20', 20 )">
+<div id="driver_day_edit_button_20"> + </div></div>
+        </div></div></div>
+                    </div>
+
+                    <div id="sc_cal_cont_week_4" class="cal_grid_item_week">
+                        <div id="cal_day_21" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 11</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_21" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_21', 21 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_21" class="driver_ht_grid">
+              <div id="driver_ht_grid_21" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_21" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_21', 21 )">
+<div id="driver_day_edit_button_21"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_22" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 12</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_22" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_22', 22 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_22" class="driver_ht_grid">
+              <div id="driver_ht_grid_22" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_22" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_22', 22 )">
+<div id="driver_day_edit_button_22"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_23" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 13</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_23" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_23', 23 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_23" class="driver_ht_grid">
+              <div id="driver_ht_grid_23" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_23" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_23', 23 )">
+<div id="driver_day_edit_button_23"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_24" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 14</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_24" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_24', 24 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_24" class="driver_ht_grid">
+              <div id="driver_ht_grid_24" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_24" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_24', 24 )">
+<div id="driver_day_edit_button_24"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_25" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 15</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_25" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_25', 25 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_25" class="driver_ht_grid">
+              <div id="driver_ht_grid_25" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_25" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_25', 25 )">
+<div id="driver_day_edit_button_25"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_26" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 16</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_26" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_26', 26 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_26" class="driver_ht_grid">
+              <div id="driver_ht_grid_26" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_26" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_26', 26 )">
+<div id="driver_day_edit_button_26"> + </div></div>
+        </div></div></div>
+                        <div id="cal_day_27" class="cal_grid_item_day"><div class="gri_day_title"><div><div class="day_inj_cont">Jul 17</div></div></div><div class="gri_day_body_1"><div>
+          <div id="day_inj_bod_1_27" class="day_inj_cont" onclick="db_1_click('day_inj_bod_1_27', 27 )">
+<div class="cal_driver_day_input_show_button">º</div>
+<div id="driver_ht_grid_27" class="driver_ht_grid">
+              <div id="driver_ht_grid_27" class="driver_cal_day_ht_grid"><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_empty">e</div></div><div class="cdht_triday_grid"><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div><div class="cdht_h_empty">e</div><div class="cdht_h_full">f</div></div></div>
+           </div></div>
+        </div></div><div class="gri_day_body_2"><div>
+          <div id="day_inj_body_2_27" class="day_inj_cont" onclick="db_2_click('day_inj_bod_2_27', 27 )">
+<div id="driver_day_edit_button_27"> + </div></div>
+        </div></div></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+<!-- [page content] items and services page  -->
+            <div id="sc_amg_itemserv_page_content" class="sc_amg_page_content" style="display: block;">
+              <div id="is_head_row" class="sc_cal_label_row">
+                    <div>Items and Services</div>
+                </div>
+
+
+                  <div id="useritems_output_wrap"><div id="useritems_output_content"><div id="useritem_cont"><div class="useritem_att">60cff1bb06d45e9342e62cf9</div><div class="useritem_att">2021-06-21 01:56:11+00:00</div><div class="useritem_att">Val</div><div class="useritem_att">                                  TP long text A, ab, absque, coram, de,
+                                  palam, clam, cum, ex, et e,
+                                  sine, tenus, pro, et prae;
+                                  His super, subter, addito,
+                                  et in, sub, si fit statio.
+                                </div></div><div id="useritem_cont"><div class="useritem_att">60d0d264ab8d706884a34975</div><div class="useritem_att">2021-06-21 17:54:44+00:00</div><div class="useritem_att">Val</div><div class="useritem_att">                                  TP long text A, ab, absque, coram, de,
+                                  palam, clam, cum, ex, et e,
+                                  sine, tenus, pro, et prae;
+                                  His super, subter, addito,
+                                  et in, sub, si fit statio.
+                                </div></div></div></div>
+
+                    <div id="is_cont_wrap">
+
+                        <!-- <div id="is_cont_2">
+                            <div id="new_item_input"><button>new item</button></div>
+                            <div id="new_service_input"><button onclick="create_serv_input()">new service</button></div>
+                        </div> -->
+
+                        <!-- <form> -->
+                        <div id="user_is_item_input_wrap">
+                                <label for="tm_post_un">Current user</label>
+                                <input type="text" id="tm_post_un" name="tm_post_un" value="Not logged in .."><br>
+                                <br>
+                                <div>::: Create New Item ::: </div><br><br>
+                                <label for="tm_post_tv1">Item Name</label>
+                                  <input type="textarea" id="tpi_itemname_input" name="tm_post_tv1" value="Val">
+                                  <br><br>
+                                <!-- <label for="tm_post_tv2">Pickup/Delivery</label>
+
+                                <input type="textarea" id="tm_post_tv2" name="tm_post_tv2"
+                                 value="Val"><br> -->
+                                <br>
+                                <label for="tm_lt_desc">Description</label>
+                                <br>
+                                <textarea type="textarea" id="tpi_desc_input">
+                                  TP long text A, ab, absque, coram, de,
+                                  palam, clam, cum, ex, et e,
+                                  sine, tenus, pro, et prae;
+                                  His super, subter, addito,
+                                  et in, sub, si fit statio.
+                                </textarea>
+                                <br>
+                                <br>
+                                <br>
+
+                                <button id="tm_post_submit" onclick="test_item_post()">
+                                <!-- onclick="test_item_post()" -->
+                                POST Test Item</button>
+
+                              </div>
+                            <!-- </form> -->
+
+<!--
+added into dom from chrome on service_name input as style attribute for some reason
+style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" autocomplete="off" -->
+                            <div id="user_is_service_input_wrap">
+                            <form onsubmit="return validateNewServiceForm()" method="post">
+                                <label for="service_name">Name of your Service</label><br>
+                                <input type="text" id="service_name" name="service_name" value="Ex. Swim Lessons" ><br>
+                                <br>
+                                <label for="service_desc">Description and Details:</label>
+                                <br><br>
+                                <textarea type="textarea" rows="4" cols="50" id="service_desc">Short description with some details about your service. You can come back and view and edit what your client sees at any time.
+                                </textarea>
+                                <br>
+                                <br>
+                                <br>
+                                <label for="service_sm">Social Media Link or Business Website Link that will be linked to your business page</label><br>
+                                <p>please enter a list with commas in between like example</p>
+                                <input size="50" type="text" id="service_sm" name="service_sm" value="facebook.com/mybusiness, mybusiness.com"><br>
+                                <br>
+                                <input id="new_service_submit" type="submit" value="Post Test Service">
+                            </form>
+
+                        </div>
+                      </div>
+                        <br><br>
+
+
+
+
+                    <div class="item_search_side_col">
+                      <br>
+                      <div>Search Items</div>
+                      <br>
+                    <div class="search_input_wrap"></div>
+
+                    <div class="search_input_wrap">
+                      <input type="text" id="itserv_username_search_input" name="search_input" value="Not logged in .."><br>
+                       <input type="text" id="itserv_keyword_search_input" name="search_input" value="search criteria .. "><br>
+                    </div>
+                    <!-- <input type="checkbox" id="sot_check" name="vehicle1" value="SOT">
+                    <label for="sot_check"> SOT</label><br> -->
+                    <br>
+
+                    <button id="search_input_button" onclick="search_is_test1()">Search</button>
+<br>
+  <button id="get_all_user_items_input_button" onclick="get_all_user_items()">Get All Items</button>
+                  </div>
+
+                </div>
+                </div>
+
+
+
+
+                <div id="sc_amg_prod_page_content" class="sc_amg_page_content" style="display: none;">
+
+                    <div id="prod_head_row" class="sc_cal_label_row">
+                        <div>Prod</div>
+                    </div>
+                    <div id="prod_cont_wrap">
+                        <div id="prod_cont_1">
+                          content 1
+                            </div>
+                        </div>
+
+                        <br>
+                        <div id="is_cont_3">
+                          prod content 2
+                    </div>
+                </div>
+
+
+
+
+                <div id="profile_page_content" class="sc_amg_page_content" style="display: none;">
+
+                <div id="profile_head_row" class="sc_cal_label_row">
+                    <div>Profile</div>
+                </div>
+
+                  <div class="not_logged_it"><button>Login with Facebook</button>
+                  </div>
+                  <br><br>
+
+                  <div class="dev_user">
+                    <!-- <form > -->
+                      <label for="tdu_post_v1">Use Temp Username </label><br><br>
+                      <input type="text" id="tdu_post_v1" name="tdu_post_v1" value="dev_test_user_1">
+                      <br>
+                      <br>
+                      <label for="tdu_post_v2">User Cat (Driver/Client)<p></p>
+                      <input type="text" id="tdu_post_v2" name="tdu_post_v2" value="Driver"><br>
+                      <label for="tdu_post_v2">Credit Card <p></p>
+                      <input type="text" id="tdu_post_v3" name="tdu_post_v3" value="0123"><br>
+                      <br>
+
+
+                      <button id="tdu_post_submit" onclick="dev_user_submit()">Use User</button>
+                      <!-- </form> -->
+                  </label></label></div>
+
+                </div>
+
+
+                <div id="sc_amg_activity_page_content" class="sc_amg_page_content" style="display: none;">
+                    <div id="sc_activity_header">
+                      <div id="prod_head_row" class="sc_cal_label_row">
+                          <div>Activity</div>
+                      </div>
+
+                      <div id="not_activity_it"><p>Nothing yet</p></div>
+                    </div>
+                  </div>
+        </div>
+    </div>
+
+
+
+
+<div id="cal_dial_wrap">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!--<script src= --><!--        /static/test_js.js--><!--&gt;</script>--></html>

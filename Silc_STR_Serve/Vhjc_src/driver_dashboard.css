@@ -1,0 +1,55 @@
+
+body{
+	padding: 0;
+	margin: 0;
+}
+div{
+	padding: 0;
+	margin: 0;
+}
+
+.driver_head_row{
+	display: grid;
+	grid-template-columns: 22% 88%;
+}
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+ 
+}
+
+  .x-scroll-card {
+    display: inline-block;
+ 
+  }
+
+.prod_hov{padding: 1%;}
+
+.prod_hov:hover{
+	background-color: lightsteelblue;
+	border-radius: 1em;
+	padding: 1%;
+}
+
+.ap-child-div{
+	border-radius: 1em;
+	padding: 1em 2em 1em 2em;
+	background-color: black;
+	color: white;
+}
+
+.prodname{
+	padding: 0;
+	color: white;
+	border-bottom: 1px solid white;
+}
+
+.prodowner{
+	padding-top: 1%;
+}
+
+.proddesc{
+	padding: 1em;
+}

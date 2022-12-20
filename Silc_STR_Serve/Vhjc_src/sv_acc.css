@@ -1,0 +1,243 @@
+
+.acc_card_update_wrap{
+    padding-bottom: 4em;
+}
+
+.sc_acc_title{
+    padding-top:1em;
+text-align: center;
+}
+
+
+.card_item_wrap{
+    padding-bottom: 2em;
+}
+
+.ai_cont{
+    padding-left: 2em;
+}
+    
+.ac_def_label{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    color:black;
+    background-color: white;
+    border: .1em solid lightgrey;
+}
+
+.user_card_field_wrap{
+    /* background-color: black; */
+    /* height: 10vh; */
+    display: grid;
+    grid-template-columns: 10% 80%;
+    padding-top: 1em;
+    padding-bottom:2em;
+    padding-left:1em;
+}
+
+@media only screen and (max-width: 600px) {
+.user_card_field_wrap{
+    display: block;
+    /* padding-bottom: 4em; */
+}
+}
+
+
+.geo_def_out_wrap{
+    padding:2em;
+}
+
+
+
+#card_bn_diff_wrap.check_active{
+    /* border-radius: .8em; */
+    border-bottom: .3em solid lightskyblue;  
+}
+
+#card_loc_show_wrap.check_active{
+    /* border-radius: .8em; */
+    border-bottom: .3em solid lightskyblue;  
+}
+
+#card_loc_diff_wrap.check_active{
+    border-bottom: .3em solid lightskyblue;  
+}
+
+#card_desc_wrap.check_active{
+    border-bottom: .3em solid lightskyblue;  
+}  
+
+
+.mb_card_tog{display: none;}
+
+@media only screen and (max-width: 600px) {
+    .mb_card_tog{
+        display: block;
+    }
+}
+
+.dt_card_but    {
+    background-color: black;
+    color:white;
+    text-align: center;
+    /* padding: 1em; */
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+
+@media only screen and (max-width: 600px) { 
+    .dt_card_but    {
+    display: none;
+    }
+}
+
+
+.dt_card_but:hover{
+    background-color: white;
+    color:lightskyblue;
+    /* border: 3px solid lightskyblue; */
+}
+
+#bn_diff_but.check_active{
+    background-color: lightskyblue;
+    color:white;
+    /* border: 3px solid lightskyblue; */
+}
+
+#card_loc_but.check_active{
+    background-color: lightskyblue;
+    color:white;
+    /* border: 3px solid lightskyblue; */
+}
+
+#card_loc_but.check_active{
+    background-color: lightskyblue;
+    color:white;
+}
+
+#card_desc_but.check_active{
+    background-color: lightskyblue;
+    color:white;
+}
+
+#card_loc_show_but.check_active{
+    background-color: lightskyblue;
+    color:white;
+    /* border: 3px solid lightskyblue; */
+}
+
+#card_loc_diff_but.check_active{
+    background-color: lightskyblue;
+    color:white;
+    /* border: 3px solid lightskyblue; */
+}
+
+input[type=checkbox].toggle_switch {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 6em;
+    height: 3em;
+    border-radius: 3em;
+    background-color: #ddd;
+    outline: 0;
+    /* cursor: pointer; */
+    transition: background-color 0.09s ease-in-out;
+    position: relative;
+}
+
+input[type=checkbox].toggle_switch::after {
+    content: '';
+    width: 3em;
+    height: 3em;
+    background-color: white;
+    border-radius: 3em;
+    position: absolute;
+    transform: scale(0.7);
+    left: 0;
+    transition: left 0.09s ease-in-out;
+    box-shadow: 0 0.1em rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* input[type=checkbox] */
+#mb_card_bn_tog.test_check {
+    background-color: #3af;
+}
+
+#mb_card_bn_tog.test_check::after {
+    left: 3em;
+}
+
+#mb_card_loc_tog.check_active{
+    background-color: #3af;
+}
+
+#mb_card_loc_tog.check_active::after{
+    left:3em;
+}
+
+#loc_diff_tog.check_active{
+    background-color: #3af;
+}
+
+#loc_diff_tog.check_active::after{
+    left:3em;
+}
+
+#desc_tog.check_active{
+    background-color: #3af;
+}
+
+#desc_tog.check_active::after{
+    left:3em;
+}
+
+
+
+#loc_sot_input{
+    margin-top:2em;
+    width: 33vw;
+}
+
+#load_user_card_preview{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(212, 218, 224);
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+
+#acc_card_out_wrap{
+    width: 33%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+#acc_wrap_end{
+    height: 2vh;
+margin-top : 2em;
+    background-color: whitesmoke;
+}
+
+
+
+
+#card_out_cont{
+    background-color: white;
+    width: 33%;
+}
+
+@media only screen and (max-width: 600px) {
+    #card_out_cont{
+        width: 88%;
+    }
+}

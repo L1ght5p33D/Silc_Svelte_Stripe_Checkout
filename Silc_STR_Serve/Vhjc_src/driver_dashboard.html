@@ -1,0 +1,97 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Silclouds</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+
+<link rel="stylesheet" href="/sc_g_css/">
+<link rel="stylesheet" href="/driver_dashboard_css/">
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+<script src="/jquery_min_cr/"></script>
+
+<script>
+
+console.log("Test jQuery")
+
+$(document).ready(function(){
+  $("div").click(function(){
+    console.log("jquery event log")
+  });
+});
+
+</script>
+<body>
+
+<div>
+ <div class="auth_header">
+  <div >Account</div>
+  <div class="acc_out">Logged In Username:</div>
+  <div id="acc_un_out">
+    
+  </div>
+ </div>
+
+<div class="driver_head_row">
+ <div class="driv_head_row_item">
+  <img src="/si_media/si_drip_logo_png/" alt="scalt" width="100" height="100">
+ </div>
+ <div class="driv_head_row_item">
+    <h1>SilcloudS Dashboard</h1>
+ </div>
+</div>
+
+
+<div id="pay_info_nav_tab_wrap" class="nav_comp">
+</div>
+
+<div id="settings_nav_tab_wrap" class="nav_comp">
+</div>
+
+
+
+<div class="nav desktop">
+<div class="sn_item">Silc Products</div>
+ <div class="create_product_form">Create 
+  <input id="prod_in" type="text" value="Product Name">
+  <input id="desc_in" type="text" value="Description">
+  <input id="price_in" type="text" value="Price">
+  <button  onclick="post_create_prod_click()" >Insert DB POST</button>
+ </div>
+
+
+
+<br><br><br><br>
+<div class="sn_item">Insert List </div>
+ <div class="create_product_form">
+  <input id="prod_in_ui" type="text" value="Product Name">
+  <input id="desc_in_ui" type="text" value="Description">
+  <input id="price_in_ui" type="number" value="Price">
+  <button  onclick="insert_prod_node()" >Post Product </button>
+ </div>
+
+ <div id="insert_prod_node_parent">
+     
+ </div>
+
+ <ul id="menu" class="scrolling-wrapper">
+    <li>Products</li>
+ </ul>
+
+
+</div>
+
+
+</div>
+</body>
+
+<script type="text/javascript" src="/sc_auth/"></script>
+<script type="text/javascript" src="/driver_dashboard_js/"></script>
+
+</html>

@@ -1,0 +1,215 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>SilcloudS</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+
+<style>
+    
+    .ca_page{  
+        height: 100vh;
+        background-color: darkslategray;
+    }
+    
+    #ca_wrap{
+        
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 5vw 88vw 5vw;
+      
+    }
+    #ca_form{
+        /* padding:0em 0em 2em 2em; */
+        border-radius: 1em;
+        background-color: rgb(224, 224, 224);
+    }
+
+    #ca_title{
+        text-align: center;
+        background-color: #e0e0e0;
+    }
+
+        .ca_form_di{
+            background-color: floralwhite;
+            padding-bottom: 2em;
+            padding-left:2em;
+        }
+
+    .ca_form_dw{
+        padding-bottom: 1em;        
+    }
+
+    .ca_in_sc{
+        background-color: black;
+        color:white;
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+
+    input:focus{
+           /* background-color:  blue; */
+           border: 3px solid lightseagreen;
+    }
+
+
+#ca_top_space{height:22vh;}
+
+#ca_but_wrap{
+    display:flex;
+    justify-content: center;
+    padding-bottom: 2em;
+}
+
+#ca_but{
+    padding: 1em 2em 1em 2em;
+    background-color: black;
+    /* border: 3px solid lightseagreen; */
+    color:grey;
+}
+
+#ca_but.sub_active{
+    padding: 1em 2em 1em 2em;
+    background-color: black;
+    border: 3px solid lightseagreen;
+    color:white;
+}
+
+#err_out_un{
+    margin-right:1em;
+    margin-top: 1em;
+    border: 3px solid lightskyblue;
+    text-align: center;
+    /* background-color: black; */
+    color:black;
+}
+
+#err_out_em{
+    margin-right:1em;
+    margin-top: 1em;
+    border: 3px solid lightskyblue;
+    text-align: center;
+    /* background-color: black; */
+    color:black;
+}
+
+#err_out_pass{
+    margin-right:1em;
+    margin-top: 1em;
+    border: 3px solid lightskyblue;
+    text-align: center;
+    /* background-color: black; */
+    color:black;
+}
+
+.ca_title_row{
+    display: grid;
+    grid-template-columns: 88px auto;
+}
+
+.ca_title_bb{
+    display:flex;
+    justify-content: center;
+    font-size: 333%;
+    background-color: black;
+    color: white;
+    width: 88px;
+}
+
+.ca_title_bb:hover{
+    background-color: white;
+    color: black;
+}
+
+.ca_title_im_row{
+    width: 88%;
+    display: flex;
+    justify-content: center;
+}
+
+</style>
+
+
+<body>
+<div class="ca_page">
+    <div id="ca_top_space"></div>
+     
+    <div id="ca_wrap">
+            <div class="ca_w_s"></div>
+                
+            <div id="ca_form">
+                <!-- <h1 id="ca_title">Create Silclouds Account</h1> -->
+
+                <div class="ca_title_row">
+                <div class="ca_title_bb" onclick="ca_back_click()" ><</div>
+                <div class="ca_title_im_row">
+                    <img src="/si_media/si_drip_logo_png/" alt="scalt" width="100" height="100">
+                </div>
+                </div>
+                
+                <div class="ca_form_dw">
+
+                <div class="ca_form_di">
+                    Username
+                    
+                    <input type="text" class="ca_in_sc" id="username_input" value="new_username">
+                    <br>
+                    <small>- Choose a unique username between 8 and 24 characters long</small>
+                    <br>
+                    <small> - You can change your SilcloudS display name later at any time in your user settings.</small><br>
+                    <div id="err_out_un">
+                    </div>    
+                </div>     
+                    <br>
+                </div>    
+               
+                <div class="ca_form_dw">
+                    <div class="ca_form_di">
+                    Email
+                    <input type="text" class="ca_in_sc" id="email_input"  value="your@email.com">
+                    <br>
+                    <small>- Ensure this email address is correct, you will be sent a confirmation message shortly</small>
+                        <br>
+                        <div id="err_out_em">
+                    
+                        </div>
+                </div>
+                    
+                    <br>
+                </div>
+                <div class="ca_form_dw">
+                    <div class="ca_form_di">
+                    Password
+                    <input type="password" class="ca_in_sc" id="pass_input" value="create_pass">
+                    <br>
+                    <small>- Password should contain at least 8 alphanumerics and 1 special character</small>
+                <br>
+                <div id="err_out_pass">
+
+                </div>    
+                
+                </div>
+                    
+                    
+                </div>    
+                    <br>
+
+                    <div id="ca_but_wrap">
+                        <button id="ca_but" onclick="create_acc_click()" >Submit</button>
+                   </div>
+                </div>
+
+            <div class="ca_w_s"></div>
+
+        </div>
+</div>
+</body>
+
+<script type="text/javascript" src="/sc_auth/"></script>
+<script type="text/javascript" src="/create_account_js/"></script>
+</html>

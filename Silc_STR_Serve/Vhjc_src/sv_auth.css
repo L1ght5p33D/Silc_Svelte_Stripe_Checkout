@@ -1,0 +1,14 @@
+
+
+.sv_auth_dev_head{
+    background-color:   rgb(68, 6, 65);
+    color:white;
+
+    grid-template-columns: 50% 50%;
+    display: grid;
+}
+
+.sv_auth_tab{
+    background-color: rgb(244,244,244);
+}
+
